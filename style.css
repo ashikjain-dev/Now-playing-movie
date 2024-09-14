@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap");
+
+:root {
+  --background-primary-color: #22254b;
+  --search-text-color: #6b94e5;
+  --text-color: #fff;
+  --background-secondary-color: #373b69;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--background-primary-color);
+  color: var(--text-color);
+  font-family: "SUSE" sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--background-secondary-color);
+  padding: 1rem;
+}
+
+header input {
+  color: inherit;
+  border-radius: 10px;
+  padding: 10px 5px;
+  background-color: var(--background-primary-color);
+  border: none;
+  font-family: inherit;
+}
+
+header input::placeholder {
+  color: #7378c5;
+}
+header input:focus {
+  outline: none;
+  background-color: var(--background-secondary-color);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: space-around;
+}
+main .movie {
+  width: 250px;
+  margin: 10px;
+  padding: 5px;
+  background-color: var(--background-secondary-color);
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+main .movie img {
+  width: 100%;
+}
+.movieinfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: 0.5px;
+}
+.movieinfo span {
+  background-color: var(--background-primary-color);
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+.movieinfo span.green {
+  color: lightgreen;
+}
+.movieinfo span.orange {
+  color: orange;
+}
+.movieinfo span.red {
+  color: red;
+}
+.overview {
+  background-color: var(--background-secondary-color);
+  color: var(--text-color);
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.5s ease-in;
+}
+.movie:hover .overview {
+  transform: translateY(0%);
+}
+@media (max-width: 580px) {
+  .movie {
+    width: 100%;
+  }
+}
